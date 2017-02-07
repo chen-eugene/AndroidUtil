@@ -1,4 +1,4 @@
-package com.eugene.androidutil;
+package com.eugene.androidutil.utils;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -11,7 +11,7 @@ import java.util.concurrent.TimeUnit;
  * 线程池管理类
  */
 
-public class ThreadManager {
+public class ThreadPoolUtil {
 
     public static final String DEFAULT_SINGLE_POOL_NAME = "DEFAULT_SINGLE_POOL_NAME";
 

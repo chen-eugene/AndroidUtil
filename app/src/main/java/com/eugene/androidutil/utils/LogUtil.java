@@ -1,4 +1,4 @@
-package com.eugene.androidutil;
+package com.eugene.androidutil.utils;
 
 import android.util.Log;
 
