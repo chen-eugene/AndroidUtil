@@ -33,6 +33,11 @@ public class PropertiesUtil {
         return proUtil;
     }
 
+    /**
+     * 获取.properties文件的值
+     * @param key
+     * @return
+     */
     public String getProperty(String key) {
         Properties pro = new Properties();
         String value = "";
@@ -55,6 +60,11 @@ public class PropertiesUtil {
         return value;
     }
 
+    /**
+     * 保存.properties文件的值
+     * @param key
+     * @param value
+     */
     public void setProperty(String key, String value) {
         Properties pro = new Properties();
         //建立输入流，关联Properties和.properties文件
