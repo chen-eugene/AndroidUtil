@@ -13,8 +13,7 @@ import android.net.NetworkInfo;
 
 public class NetUtil {
 
-    private NetUtil()
-    {
+    private NetUtil() {
 		/* cannot be instantiated */
         throw new UnsupportedOperationException("cannot be instantiated");
     }
@@ -25,8 +24,7 @@ public class NetUtil {
      * @param context
      * @return
      */
-    public static boolean isConnected(Context context)
-    {
+    public static boolean isConnected(Context context) {
 
         ConnectivityManager connectivity = (ConnectivityManager) context
                 .getSystemService(Context.CONNECTIVITY_SERVICE);
@@ -49,8 +47,7 @@ public class NetUtil {
     /**
      * 判断是否是wifi连接
      */
-    public static boolean isWifi(Context context)
-    {
+    public static boolean isWifi(Context context) {
         ConnectivityManager cm = (ConnectivityManager) context
                 .getSystemService(Context.CONNECTIVITY_SERVICE);
 
@@ -63,8 +60,7 @@ public class NetUtil {
     /**
      * 打开网络设置界面
      */
-    public static void openSetting(Activity activity)
-    {
+    public static void openSetting(Activity activity) {
         Intent intent = new Intent("/");
         ComponentName cm = new ComponentName("com.android.settings",
                 "com.android.settings.WirelessSettings");

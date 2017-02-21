@@ -94,7 +94,7 @@ public class ThreadPoolUtil {
 
         private ThreadPoolProxy(int corePoolSize, int maximumPoolSize, long keepAliveTime) {
             mCorePoolSize = corePoolSize;
-            maximumPoolSize = maximumPoolSize;
+            mMaximumPoolSize = maximumPoolSize;
             mKeepAliveTime = keepAliveTime;
         }
 
