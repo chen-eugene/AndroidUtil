@@ -27,8 +27,6 @@ public class ThreadPoolUtil {
     private static Map<String, ThreadPoolProxy> mMap = new HashMap<String, ThreadPoolProxy>();
     private static Object mSingleLock = new Object();
 
-    // private static ThreadPoolProxy
-
     /**
      * 获取下载线程
      */
