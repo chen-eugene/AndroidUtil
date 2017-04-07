@@ -4,20 +4,26 @@ package com.eugene.androidutil.utils;
 import android.content.Context;
 import android.os.Handler;
 import android.os.Looper;
+import android.view.View;
+import android.widget.TextView;
 import android.widget.Toast;
+
+import com.eugene.androidutil.R;
 
 /**
  * Toast工具类 2017.03.02修改
+ *
  * @author WikerYong
  * @version 2012-5-21 下午9:21:01
  */
-public class ToastUtils {
+public class ToastUtil {
     private static Handler handler = new Handler(Looper.getMainLooper());
     private static Toast toast = null;
     private static Object synObj = new Object();
 
     /**
      * Toast发送消息，默认Toast.LENGTH_SHORT
+     *
      * @param act
      * @param msg
      */
@@ -27,6 +33,7 @@ public class ToastUtils {
 
     /**
      * Toast发送消息，默认Toast.LENGTH_LONG
+     *
      * @param act
      * @param msg
      */
@@ -36,6 +43,7 @@ public class ToastUtils {
 
     /**
      * Toast发送消息，默认Toast.LENGTH_SHORT
+     *
      * @param act
      * @param msg
      */
@@ -45,6 +53,7 @@ public class ToastUtils {
 
     /**
      * Toast发送消息，默认Toast.LENGTH_LONG
+     *
      * @param act
      * @param msg
      */
@@ -54,6 +63,7 @@ public class ToastUtils {
 
     /**
      * Toast发送消息
+     *
      * @param act
      * @param msg
      * @param len
@@ -67,13 +77,13 @@ public class ToastUtils {
                     @Override
                     public void run() {
                         synchronized (synObj) {
-                            if (toast != null) {
-                                toast.cancel();
-                                toast = Toast.makeText(act, msg, len);
-                                toast.setText(msg);
+                            View view = View.inflate(act, R.layout.toast_bg, null);
+                            TextView tvToast = (TextView) view.findViewById(R.id.tv_toast);
+                            tvToast.setText(msg);
+                            if (toast == null) {
+                                toast = new Toast(act);
+                                toast.setView(view);
                                 toast.setDuration(len);
-                            } else {
-                                toast = Toast.makeText(act, msg, len);
                             }
                             toast.show();
                         }
@@ -85,6 +95,7 @@ public class ToastUtils {
 
     /**
      * Toast发送消息
+     *
      * @param act
      * @param msg
      * @param len
@@ -98,13 +109,13 @@ public class ToastUtils {
                     @Override
                     public void run() {
                         synchronized (synObj) {
-                            if (toast != null) {
-                                toast.cancel();
-                                toast = Toast.makeText(act, msg, len);
-                                toast.setText(msg);
+                            View view = View.inflate(act, R.layout.toast_bg, null);
+                            TextView tvToast = (TextView) view.findViewById(R.id.tv_toast);
+                            tvToast.setText(msg);
+                            if (toast == null) {
+                                toast = new Toast(act);
+                                toast.setView(view);
                                 toast.setDuration(len);
-                            } else {
-                                toast = Toast.makeText(act, msg, len);
                             }
                             toast.show();
                         }
